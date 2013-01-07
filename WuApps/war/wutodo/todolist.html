@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Wu Westy | Wu To Do</title>
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0, width=device-width" />
+	<link rel="stylesheet" media="screen" href="/css/proui.css" />
+    <link rel="stylesheet" media="screen" href="css/todolist.css" />
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/prowebapps.js"></script>
+	<script type="text/javascript" src="/js/iscroll.js"></script>
+	<script type="text/javascript" src="js/todolist.js"></script>
+</head>
+<body>
+	<ul id="menu">
+	</ul>
+	<div id="main" class="view">
+		<h1>
+			<span>Wu To Do</span>
+			<img class="right" src="/image/online.png" height="25" width="25"/>
+		</h1>
+		
+		<div class="task" style="display: none;">
+			<h3>Task: <span class="task-name"></span></h3>
+			<p class="task-description"></p>
+			<p class="task-due">
+				<label>DUE IN:</label>
+				<span class="task-daysleft"></span>
+			</p>
+			<ul class="task-actions">
+				<li class="right"><a href="#" class="task-complete">COMPLETE TASK</a></li>
+				<li><a href="#" class="task-start">START WORKING</a></li>
+			</ul>
+		</div>
+		<ul class="buttons">
+			<li><a class="changeview" href="#addtask">Add Task</a></li>
+			<li><a class="changeview" href="#alltasks">Show Tasks</a></li>
+			<li><a class="changeview" href="#categories">Show Categories</a></li>
+			<li><a class="changeview" href="#synchronize">Synchronize</a></li>
+		</ul>
+	</div>
+	<div id="alltasks" class="view">
+		<h1 class="fancy">Tasks</h1>
+		<div id="wrapperalltasks" class="wrapper">
+			<div id="alltaskscroller">
+				<ul id="alltasklist" class="tasklist"></ul>
+			</div>
+		</div>
+	</div>
+	<div id="categorytasks" class="view">
+		<h1 class="fancy">Tasks By Category</h1>
+		<div id="wrappercategorytasks" class="wrapper">
+			<div id="categorytaskscroller">
+				<div id="categorytasklist"></div>
+			</div>
+		</div>
+	</div>
+	<div id="oldtasks" class="view">
+		<h1 class="fancy">Old Tasks</h1>
+		<div id="wrapperoldtasks" class="wrapper">
+			<div id="oldtaskscroller">
+				<ul id="oldtasklist" class="tasklist"></ul>
+			</div>
+		</div>
+	</div>
+	<div id="addtask" class="view">
+	    <h1 class="fancy">Create Task</h1>
+		<div id="errors"></div>
+	    <form id="taskentry">
+	    <ul>
+	        <li><input type="text" class="required" name="task[name]" id="taskname" placeholder="Task Name" value=""/></li>
+	        <li>
+	            <textarea name="task[description]" id="taskdesc" placeholder="Description" rows="5"></textarea>
+	        </li>
+	        <li><input type="date" class="required date" name="task[due]" id="taskdue" placeholder="Task Due" value="" /></li>
+			<li><input type="text" class="required" name="task[priority]" id="taskpriority" placeholder="Task Priority" value="" /></li>
+			<li><input type="text" class="required" name="task[category]" id="taskcategory" placeholder="Task Category" value="" /></li>
+	        <li class="naked"><input type="submit" name="Save" /></li>
+	    </ul>
+	    </form>
+	</div>
+	<div id="categories" class="view">
+		<h1 class="fancy">Categories</h1>
+		<div id="wrappercategories" class="wrapper">
+			<div id="categoryscroller">
+				<ul id="categorylist" class="categorylist"></ul>
+			</div>
+		</div>
+	</div>
+	<div id="addcategory" class="view">
+	    <h1 class="fancy">Create Category</h1>
+		<div id="errors"></div>
+	    <form id="categoryentry">
+	    <ul>
+	        <li><input type="text" class="required" name="category[name]" id="categoryname" placeholder="Category Name" value=""/></li>
+	        <li><input type="text" class="required" name="category[sequence]" id="categorysequence" placeholder="Category Sequence" value=""/></li>
+	        <li><input type="text" class="required" name="category[color]" id="categorycolor" placeholder="Category Color" value="" /></li>
+	        <li class="naked"><input type="submit" name="Save" /></li>
+	    </ul>
+	    </form>
+	</div>
+	<div id="synchronize" class="view">
+		<h1 class="fancy">Synchronized</h1>
+		<div id="synchronizeInfo"></div>
+	</div>
+	<div id="geolocation"> </div>
+</body>
+</html>
